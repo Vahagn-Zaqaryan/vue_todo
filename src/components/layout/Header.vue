@@ -1,10 +1,14 @@
 <template>
   <header class="header">
-    <h1>TodoList</h1>
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+      <nav class="nav-wrapper white z-depth-1">
+       <div class="container">
+         <a href="#" class="brand-logo black-text">TodoList</a>
+         <ul id="nav-mobile" class="right hide-on-med-and-down">
+           <li><router-link to="/" class="black-text">Home</router-link></li>
+           <li><router-link to="/about" class="black-text">About</router-link></li>
+         </ul>
+       </div>
+     </nav>
   </header>
 </template>
 
@@ -13,17 +17,3 @@ export default {
   name: "Header"
 }
 </script>
-
-<style scoped>
-  .header {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-  }
-  .header a {
-    color: #fff;
-    padding-right: 5px;
-    text-decoration: none;
-  }
-</style>

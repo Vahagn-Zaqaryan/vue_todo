@@ -2,7 +2,6 @@
   <div>
     <form @submit="addTodo">
       <input type="text" v-model="title" name="title" placeholder="Add Todo...">
-      <input type="submit" value="Submit" class="btn">
     </form>
   </div>
 </template>

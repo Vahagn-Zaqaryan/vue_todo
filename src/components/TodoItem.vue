@@ -1,11 +1,15 @@
 <template>
-    <div class="todo-item" v-bind:class="{'is-complete': todo.completed}">
-        <p>
-            <input type="checkbox" v-on:change="markC">
-            {{todo.title}}
-            <button @click="$emit('del-todo', todo.id)" class="del">X</button>
-        </p>
-    </div>
+        <div class="card z-depth-1">
+          <div class="card-content grey-text text-darken-3">
+            <span class="card-title" style="margin: 0;">
+                <label>
+                    <input type="checkbox" class="filled-in" :checked="todo.completed? true : false " v-on:change="markC"/>
+                    <span class="black-text" v-bind:class="{'is-complete': todo.completed}">{{todo.title}}</span>
+                </label>
+                <button @click="$emit('del-todo', todo.id)" class="del"><i class="material-icons" style="color: #555;">delete</i></button>
+            </span>
+          </div>
+        </div>
 </template>
 
 <script>
@@ -21,22 +25,20 @@
 </script>
 
 <style scoped>
-    .todo-item {
-        background: #f4f4f4;
-        padding: 10px;
-        border-bottom: 1px #ccc dotted;
-    }
+
     .is-complete {
         text-decoration: line-through;
         color: #aaa;
     }
     .del {
-        background: #ff0000;
-        color: #fff;
+        opacity: 0.8;
+        background-color: #fff;
         border: none;
-        padding: 5px 9px;
-        border-radius: 50%;
         cursor: pointer;
         float: right;
+        transition: all .3s;
+    }
+    .del:hover{
+        opacity: 1;
     }
 </style>
